@@ -1,0 +1,491 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <meta name="theme-color" content="#fffaf2">
+    <title>happy 15th birthday ♡</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Patrick+Hand&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --cream: #fffaf2;
+        --ink: #514b50;
+        --pink: #f4c6d0;
+        --pink-light: #fbe8eb;
+        --blue: #c9e4f2;
+        --yellow: #f5e4a6;
+        --green: #d7e9cf;
+        --paper: #fffefa
+      }
+
+      * {
+        box-sizing: border-box
+      }
+
+      html,
+      body {
+        margin: 0;
+        min-height: 100%;
+        background: var(--cream);
+        color: var(--ink)
+      }
+
+      body {
+        font-family: "DM Sans", sans-serif;
+        overflow-x: hidden
+      }
+
+      body:before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        z-index: 0;
+        pointer-events: none;
+        opacity: .8;
+        background:
+          radial-gradient(circle at 7% 17%, #edc1ce 0 3px, transparent 4px),
+          radial-gradient(circle at 18% 78%, #b9d9eb 0 3px, transparent 4px),
+          radial-gradient(circle at 86% 16%, #f0dc94 0 3px, transparent 4px),
+          radial-gradient(circle at 92% 72%, #c8dfbd 0 3px, transparent 4px),
+          radial-gradient(circle at 56% 8%, #b9d9eb 0 2px, transparent 3px),
+          radial-gradient(circle at 42% 91%, #edc1ce 0 3px, transparent 4px),
+          radial-gradient(circle at 73% 88%, #f0dc94 0 2px, transparent 3px)
+      }
+
+      .sparkle {
+        position: fixed;
+        z-index: 0;
+        pointer-events: none;
+        font-size: 20px;
+        animation: twinkle 3s ease-in-out infinite
+      }
+
+      .sp1 {
+        top: 12%;
+        left: 11%;
+        color: #dfa6b5
+      }
+
+      .sp2 {
+        top: 23%;
+        right: 9%;
+        color: #8ebfd9;
+        animation-delay: .8s
+      }
+
+      .sp3 {
+        bottom: 14%;
+        left: 9%;
+        color: #d7bd65;
+        animation-delay: 1.4s
+      }
+
+      .sp4 {
+        bottom: 23%;
+        right: 12%;
+        color: #9dbf91;
+        animation-delay: .4s
+      }
+
+      @keyframes twinkle {
+        50% {
+          transform: scale(1.2) rotate(12deg);
+          opacity: .55
+        }
+      }
+
+      #app {
+        position: relative;
+        z-index: 1;
+        min-height: 100svh;
+        display: grid;
+        place-items: center;
+        padding: 22px 14px
+      }
+
+      .screen {
+        display: none;
+        width: min(100%, 720px);
+        min-height: calc(100svh - 44px);
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        animation: fadein .45s ease both
+      }
+
+      .screen.active {
+        display: flex
+      }
+
+      @keyframes fadein {
+        from {
+          opacity: 0;
+          transform: translateY(10px)
+        }
+
+        to {
+          opacity: 1;
+          transform: translateY(0)
+        }
+      }
+
+      .script {
+        font-family: "Patrick Hand", cursive
+      }
+
+      h1 {
+        font: clamp(2.8rem, 9vw, 5.3rem)/.96 "Patrick Hand", cursive;
+        letter-spacing: -1.5px;
+        margin: 0 0 10px
+      }
+
+      h2 {
+        font: clamp(2.2rem, 7vw, 3.35rem)/1.02 "Patrick Hand", cursive;
+        margin: 0 0 10px
+      }
+
+      .kicker {
+        font: 1.18rem "Patrick Hand", cursive;
+        color: #8d7e83;
+        margin: 0 0 8px
+      }
+
+      .sub {
+        font: 1.3rem "Patrick Hand", cursive;
+        color: #82757a;
+        margin: 0 0 16px
+      }
+
+      button {
+        font-family: "Quicksand", sans-serif;
+        font-weight: 700;
+        border: 0;
+        cursor: pointer;
+        transition: transform .18s, box-shadow .18s
+      }
+
+      button:focus-visible {
+        outline: 3px solid #b4d5e6;
+        outline-offset: 4px
+      }
+
+      .pill {
+        background: var(--pink);
+        color: #614a51;
+        border-radius: 999px;
+        padding: 13px 30px;
+        box-shadow: 0 5px 0 #e5aebb, 0 9px 20px #d8b6bd44
+      }
+
+      .pill:active {
+        transform: translateY(3px);
+        box-shadow: 0 2px 0 #e5aebb
+      }
+
+      .art {
+        width: min(45vw, 200px);
+        height: min(30vh, 220px);
+        min-height: 190px;
+        display: grid;
+        place-items: center;
+        margin: 14px auto 23px
+      }
+
+      .art img {
+        display: block;
+        max-width: 100%;
+        max-height: 100%;
+        width: auto;
+        height: auto;
+        object-fit: contain
+      }
+
+      .art img.birthday {
+        max-width: 100%;
+        max-height: 100%
+      }
+
+      .image-fallback {
+        display: none;
+        font: 1rem "Patrick Hand", cursive;
+        color: #9a7f87;
+        padding: 15px
+      }
+
+      .panel {
+        position: relative;
+        width: min(100%, 590px);
+        background: var(--paper);
+        border: 2px solid #f2d9df;
+        border-radius: 30px;
+        padding: 38px 26px 30px;
+        box-shadow: 0 14px 38px #d9c4b833
+      }
+
+      .panel:before {
+        content: "";
+        position: absolute;
+        inset: 8px;
+        border: 1px dashed #efcbd3;
+        border-radius: 22px;
+        pointer-events: none
+      }
+
+      .panel>* {
+        position: relative
+      }
+
+      .top-mark {
+        font-size: 2rem;
+        position: absolute;
+        top: -27px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: var(--cream);
+        padding: 0 12px;
+        border-radius: 50%
+      }
+
+      .prompt {
+        font: clamp(2.05rem, 7vw, 3.15rem)/1.08 "Patrick Hand", cursive;
+        margin: 8px 0 25px
+      }
+
+      .actions {
+        display: flex;
+        gap: 13px;
+        justify-content: center;
+        flex-wrap: wrap
+      }
+
+      .yes,
+      .no {
+        border-radius: 999px;
+        padding: 13px 25px
+      }
+
+      .yes {
+        background: #d9e9d1;
+        color: #52684c
+      }
+
+      .no {
+        background: #f7dfe4;
+        color: #765b62
+      }
+
+      .cheeky {
+        min-height: 28px;
+        margin: 20px 0 12px;
+        font: 1.35rem "Patrick Hand", cursive;
+        color: #a36d7c
+      }
+
+      .cake-art {
+        width: min(30vw, 200px);
+        height: min(30vh, 220px);
+        min-height: 170px;
+        display: grid;
+        place-items: center;
+        margin: 8px auto 12px
+      }
+
+      .cake-art img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+        cursor: pointer;
+        animation: cakebob 2.2s ease-in-out infinite;
+        transform-origin: 50% 85%
+      }
+
+      @keyframes cakebob {
+
+        0%,
+        100% {
+          transform: translateY(0) rotate(-1deg)
+        }
+
+        50% {
+          transform: translateY(-7px) rotate(1deg)
+        }
+      }
+
+      .tap-hint {
+        font: 1.15rem "Patrick Hand", cursive;
+        color: #96858a;
+        margin: 0 0 13px
+      }
+
+      .plush-art {
+        width: min(30vw, 200px);
+        height: min(30vh, 220px);
+        min-height: 170px;
+        margin: 6px auto 18px;
+        display: grid;
+        place-items: center
+      }
+
+      .plush-art img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain
+      }
+
+      .wishes {
+        max-width: 490px;
+        margin: 7px auto 0;
+        font-size: 1rem;
+        line-height: 1.82;
+        color: #71666a
+      }
+
+      .wishes strong {
+        color: #b97889
+      }
+
+      .corners {
+        display: flex;
+        justify-content: space-between;
+        align-items: end;
+        width: min(100%, 530px);
+        margin: 18px auto 0;
+        pointer-events: none
+      }
+
+      .corners img {
+        width: 82px;
+        height: 82px;
+        object-fit: contain
+      }
+
+      .footer {
+        font-size: .75rem;
+        color: #b1a3a4;
+        margin-top: 20px
+      }
+
+      @media(max-width:480px) {
+        #app {
+          padding: 14px 12px
+        }
+
+        .screen {
+          min-height: calc(100svh - 28px)
+        }
+
+        .panel {
+          padding: 35px 18px 25px
+        }
+
+        .corners img {
+          width: 64px;
+          height: 64px
+        }
+
+        .art {
+          margin: 9px auto 18px
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="sparkle sp1">✦</div>
+    <div class="sparkle sp2">✧</div>
+    <div class="sparkle sp3">✦</div>
+    <div class="sparkle sp4">✧</div>
+    <main id="app">
+      <section class="screen active" id="screen1">
+        <p class="kicker">a tiny internet celebration for you</p>
+        <h1 id="headline" aria-label="happy 15th birthday!"></h1>
+        <div class="art"><img class="birthday" src="https://plain-eeur-prod-public.komododecks.com/202611/05/2osFkshhckZg131R1YmG/image.jpg" alt="Snoopy birthday illustration" onerror="imageFailed(this)"><span class="image-fallback">your Snoopy birthday picture should be here ♡</span></div><button class="pill" type="button" onclick="showScreen(2)">next :3</button>
+        <p class="footer">made especially for you ♡</p>
+      </section>
+      <section class="screen" id="screen2">
+        <div class="panel">
+          <div class="top-mark">🐾</div>
+          <p class="kicker">pssst... you</p>
+          <div class="prompt">i have a surprise for you,<br>wanna see it?</div>
+          <div class="actions"><button class="yes" type="button" onclick="showScreen(3)">YES!! ♡</button><button class="no" type="button" onclick="sayNo()">no thanks</button></div>
+          <p class="cheeky" id="cheekyMessage" aria-live="polite"></p><button class="pill" id="continueAfterNo" type="button" style="display:none" onclick="showScreen(3)">okay fine, show me :D</button>
+        </div>
+        <div class="art" style="height:145px;min-height:120px;margin-bottom:0"><img src="https://plain-eeur-prod-public.komododecks.com/202611/05/JmKVjdCYuKC4b3FOaI01/image.jpg" alt="Snoopy" style="max-height:140px" onerror="imageFailed(this)"><span class="image-fallback">♡</span></div>
+      </section>
+      <section class="screen" id="screen3">
+        <div class="panel">
+          <div class="top-mark">🎀</div>
+          <h2>okay, here it is!</h2>
+          <p class="sub">tap on the cake to open your gift</p>
+          <div class="cake-art"><img src="https://plain-eeur-prod-public.komododecks.com/202611/05/YmbZmvkHNfv5YZhVxiJ1/image.jpg" alt="Birthday cake" role="button" tabindex="0" onclick="openGift()" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openGift()}" onerror="imageFailed(this)"><span class="image-fallback">your birthday cake ♡</span></div><button class="pill" type="button" onclick="openGift()">open my gift ♡</button>
+        </div>
+      </section>
+      <section class="screen" id="screen4">
+        <div class="panel">
+          <div class="top-mark">🎀</div>
+          <h2>it's a Snoopy toy!!</h2>
+          <p class="sub">a tiny birthday buddy for you</p>
+          <div class="plush-art"><img src="https://plain-eeur-prod-public.komododecks.com/202611/05/b1TWYxyA2fDYmpcMGSpf/image.jpg" alt="Snoopy plush toy" onerror="imageFailed(this)"><span class="image-fallback">your Snoopy plushie ♡</span></div><button class="pill" type="button" onclick="showScreen(5)">my wishes ♡</button>
+        </div>
+      </section>
+      <section class="screen" id="screen5">
+        <div class="panel">
+          <div class="top-mark">💌</div>
+          <h2>my wishes for you</h2>
+          <div class="wishes"> happy birthday, tedi ꉂ(˵˃ ᗜ ˂˵)!!♡<br><br> i hope 15 is kind to you. i hope it brings you so many reasons to laugh, new things to get excited about, little moments that turn into favourite memories, and people who make you feel appreciated exactly as you are. <( ˶˘ ³˘)♡ <br><br> i'm really glad we found each other. even with a screen between us, you've become someone i'm genuinely grateful to have in my life. thank you for being my friend, for the laughs, and for all the little things that make our friendship ours.ˊᗜˋ<br><br> i hope this year is full of good surprises, good cake, and everything you've been wishing for. you deserve lovely things!! ദ്ദി˙∇˙)ว <strong>love you, teds!! ₍^. .^₎Ⳋ </strong></div>
+          <div class="corners"><img src="https://plain-eeur-prod-public.komododecks.com/202611/05/7nwpwJV3I2nbowF7dIzd/image.jpg" alt="Snoopy decoration" onerror="imageFailed(this)"><img src="https://plain-eeur-prod-public.komododecks.com/202611/05/HXeSrOM5lxFxyVUo5SoE/image.jpg" alt="Mei Mei" onerror="imageFailed(this)"></div>
+          <div class="footer">the end... unless you want to look again ♡</div><button class="pill" type="button" style="margin-top:17px" onclick="showScreen(1)">back to the beginning ↻</button>
+        </div>
+      </section>
+    </main>
+    <script>
+      let typingTimer = null;
+
+      function showScreen(number) {
+        document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+        const target = document.getElementById('screen' + number);
+        if (target) {
+          target.classList.add('active');
+        }
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+        if (number === 1) typeHeadline();
+      }
+
+      function typeHeadline() {
+        const el = document.getElementById('headline');
+        if (!el) return;
+        if (typingTimer) clearInterval(typingTimer);
+        const words = 'happy 15th birthday!';
+        el.textContent = '';
+        let i = 0;
+        typingTimer = setInterval(() => {
+          el.textContent += words[i++] || '';
+          if (i >= words.length) clearInterval(typingTimer)
+        }, 90);
+      }
+
+      function sayNo() {
+        const message = document.getElementById('cheekyMessage');
+        const next = document.getElementById('continueAfterNo');
+        message.textContent = 'too bad, i made you one anyway >:3';
+        next.style.display = 'inline-block';
+      }
+
+      function openGift() {
+        showScreen(4)
+      }
+
+      function imageFailed(img) {
+        img.style.display = 'none';
+        const fallback = img.parentElement.querySelector('.image-fallback');
+        if (fallback) fallback.style.display = 'block';
+      }
+      typeHeadline();
+    </script>
+  </body>
+</html>
